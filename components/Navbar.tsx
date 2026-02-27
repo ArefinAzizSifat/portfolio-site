@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
@@ -40,9 +41,20 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl md:text-2xl font-bold tracking-tight hover:opacity-70 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-70 transition-opacity"
           >
-            AAS
+            <div className="relative w-10 h-10 md:w-12 md:h-12">
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <span className="text-xl md:text-2xl font-bold tracking-tight">
+              AAS
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

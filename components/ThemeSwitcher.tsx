@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export type Theme = "default" | "light" | "dark";
+export type Theme = "light" | "dark";
 
 type ThemeSwitcherProps = {
   inline?: boolean;
@@ -17,11 +17,11 @@ export default function ThemeSwitcher({
   buttonClassName = "",
   menuClassName = "",
 }: ThemeSwitcherProps) {
-  const [theme, setTheme] = useState<Theme>("default");
+  const [theme, setTheme] = useState<Theme>("light");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const savedTheme = (localStorage.getItem("theme") as Theme) || "default";
+    const savedTheme = (localStorage.getItem("theme") as Theme) || "light";
     setTheme(savedTheme);
     applyTheme(savedTheme);
   }, []);
@@ -48,7 +48,6 @@ export default function ThemeSwitcher({
   };
 
   const themes = [
-    { value: "default" as Theme, label: "Gradient", icon: "🎨" },
     { value: "light" as Theme, label: "Light", icon: "☀️" },
     { value: "dark" as Theme, label: "Dark", icon: "🌙" },
   ];

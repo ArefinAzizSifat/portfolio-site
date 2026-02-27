@@ -4,7 +4,19 @@ import { useState, useEffect } from "react";
 
 export type Theme = "default" | "light" | "dark";
 
-export default function ThemeSwitcher() {
+type ThemeSwitcherProps = {
+  inline?: boolean;
+  containerClassName?: string;
+  buttonClassName?: string;
+  menuClassName?: string;
+};
+
+export default function ThemeSwitcher({
+  inline = false,
+  containerClassName = "",
+  buttonClassName = "",
+  menuClassName = "",
+}: ThemeSwitcherProps) {
   const [theme, setTheme] = useState<Theme>("default");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,12 +53,24 @@ export default function ThemeSwitcher() {
     { value: "dark" as Theme, label: "Dark", icon: "🌙" },
   ];
 
+  const containerClasses = inline
+    ? `relative ${containerClassName}`
+    : `fixed bottom-6 right-6 z-50 ${containerClassName}`;
+  const menuPositionClasses = inline
+    ? "absolute top-12 right-0"
+    : "absolute bottom-16 right-0";
+  const buttonClasses = inline
+    ? "w-10 h-10"
+    : "w-14 h-14";
+
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className={containerClasses}>
       <div className="relative">
         {/* Theme Options */}
         {isOpen && (
-          <div className="absolute bottom-16 right-0 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 p-2 min-w-[140px]">
+          <div
+            className={`${menuPositionClasses} bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 p-2 min-w-[140px] ${menuClassName}`}
+          >
             {themes.map((t) => (
               <button
                 key={t.value}
@@ -69,7 +93,7 @@ export default function ThemeSwitcher() {
         {/* Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 bg-white dark:bg-slate-800 rounded-full shadow-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:scale-110 transition-all duration-300 group"
+          className={`${buttonClasses} bg-white dark:bg-slate-800 rounded-full shadow-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:scale-110 transition-all duration-300 group ${buttonClassName}`}
           aria-label="Change theme"
         >
           <span className="text-2xl group-hover:rotate-180 transition-transform duration-500">

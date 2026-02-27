@@ -41,7 +41,7 @@ const Footer = () => {
                   href="/blog"
                   className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm transition-colors"
                 >
-                  Blog
+                  Notes
                 </Link>
               </li>
             </ul>

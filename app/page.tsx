@@ -14,6 +14,7 @@ export default function HomePage() {
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 -z-10 gradient-mesh animate-gradient bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"></div>
+        <div className="absolute inset-0 -z-10 dots-pattern opacity-40"></div>
         <div className="max-w-4xl mx-auto text-center">
           {/* Profile Picture */}
           <div className="mb-8 flex justify-center">
@@ -58,7 +59,7 @@ export default function HomePage() {
 
       {/* About Section */}
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 relative">
-        <div className="absolute inset-0 -z-10 opacity-30 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div className="absolute inset-0 -z-10 dots-pattern-lg opacity-50"></div>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center">
             About Me
@@ -108,6 +109,7 @@ export default function HomePage() {
 
       {/* Experience Section */}
       <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white relative">
+        <div className="absolute inset-0 -z-10 dots-pattern opacity-30"></div>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center">
             Experience
@@ -152,7 +154,7 @@ export default function HomePage() {
 
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-purple-50/50 via-white to-pink-50/50 relative">
-        <div className="absolute inset-0 -z-10 opacity-20 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div className="absolute inset-0 -z-10 dots-pattern-lg opacity-40"></div>
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
@@ -224,6 +226,7 @@ export default function HomePage() {
 
       {/* Skills Section */}
       <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/30 relative">
+        <div className="absolute inset-0 -z-10 dots-pattern opacity-30"></div>
         <div className="absolute inset-0 -z-10 opacity-30">
           <div className="absolute top-10 left-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
           <div className="absolute top-10 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>

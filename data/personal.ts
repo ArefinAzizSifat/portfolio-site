@@ -6,8 +6,8 @@ export const personalInfo = {
   email: "Aarefin.a.sifat22@gmail.com",
   phone: "+49 15565418539",
   address: "Grillparzerstr. 34, Ingolstadt, Germany",
-  linkedin: "https://linkedin.com/in/arefin-aziz-sifat",
-  github: "https://github.com/arefinsifat",
+  linkedin: "https://www.linkedin.com/in/arefinazizsifat/",
+  github: "https://github.com/ArefinAzizSifat",
   bio: "I am an AI engineering student and research assistant focused on transformer-based localization, reproducible ML pipelines, and robust deployment practices. I combine hands-on systems engineering with data-driven experimentation to deliver reliable results across AI and IT environments.",
   interests: [
     "Travelling",

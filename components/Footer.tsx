@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { personalInfo } from "@/data/personal";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -60,7 +61,7 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Connect</h3>
             <div className="flex space-x-4">
               <a
-                href="https://linkedin.com/in/arefin-aziz-sifat"
+                href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -75,7 +76,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://github.com/arefinsifat"
+                href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -90,7 +91,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="mailto:Aarefin.a.sifat22@gmail.com"
+                href={`mailto:${personalInfo.email}`}
                 className="text-gray-600 hover:text-gray-900 transition-colors"
                 aria-label="Email"
               >

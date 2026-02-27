@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+/* Mouse cursor effect */
+body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="4" fill="%23000"/><circle cx="16" cy="16" r="8" fill="none" stroke="%23000" stroke-width="1" opacity="0.5"/></svg>') 15 15, auto;
+}
+
+[data-theme="dark"] body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="4" fill="%23fff"/><circle cx="16" cy="16" r="8" fill="none" stroke="%23fff" stroke-width="1" opacity="0.5"/></svg>') 15 15, auto;
+}
+
+a, button {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23000"/></svg>') 15 15, pointer;
+}
+
+[data-theme="dark"] a, [data-theme="dark"] button {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23fff"/></svg>') 15 15, pointer;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -17,12 +34,22 @@
   
   /* Light Theme - White with dots */
   [data-theme="light"] body {
-    @apply bg-white;
+    @apply bg-white text-gray-900;
   }
   
-  /* Dark Theme - Black with dots */
+  /* Dark Theme - Charcoal (minimalistic) */
   [data-theme="dark"] body {
-    @apply bg-gray-900 text-white;
+    @apply bg-gray-950 text-gray-100;
+  }
+  
+  /* Dark Mode Text Color Fixes */
+  [data-theme="dark"] h1,
+  [data-theme="dark"] h2,
+  [data-theme="dark"] h3,
+  [data-theme="dark"] h4,
+  [data-theme="dark"] h5,
+  [data-theme="dark"] h6 {
+    @apply text-white;
   }
   
   [data-theme="dark"] .text-gray-900 {
@@ -30,24 +57,42 @@
   }
   
   [data-theme="dark"] .text-gray-700 {
-    @apply text-gray-300;
+    @apply text-gray-200;
   }
   
   [data-theme="dark"] .text-gray-600 {
+    @apply text-gray-300;
+  }
+  
+  [data-theme="dark"] .text-gray-500 {
     @apply text-gray-400;
   }
   
   [data-theme="dark"] .bg-white {
-    @apply bg-gray-800;
+    @apply bg-gray-900;
   }
   
   [data-theme="dark"] .bg-gray-50 {
-    @apply bg-gray-800/50;
+    @apply bg-gray-900/70;
+  }
+  
+  [data-theme="dark"] .bg-gray-100 {
+    @apply bg-gray-800;
   }
   
   [data-theme="dark"] .border-gray-200,
-  [data-theme="dark"] .border-gray-100 {
-    @apply border-gray-700;
+  [data-theme="dark"] .border-gray-100,
+  [data-theme="dark"] .border-gray-300 {
+    @apply border-gray-800;
+  }
+  
+  [data-theme="dark"] .shadow-sm {
+    @apply shadow-lg shadow-black/50;
+  }
+  
+  [data-theme="dark"] input,
+  [data-theme="dark"] textarea {
+    @apply bg-gray-900 text-white border-gray-800;
   }
 }
 
@@ -63,7 +108,11 @@
   }
   
   [data-theme="dark"] .dots-pattern {
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  }
+  
+  [data-theme="light"] .dots-pattern {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
   }
   
   .dots-pattern-lg {
@@ -72,7 +121,11 @@
   }
   
   [data-theme="dark"] .dots-pattern-lg {
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 2px, transparent 2px);
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 2px, transparent 2px);
+  }
+  
+  [data-theme="light"] .dots-pattern-lg {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.06) 2px, transparent 2px);
   }
   
   .gradient-mesh {

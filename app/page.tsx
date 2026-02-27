@@ -15,12 +15,12 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Profile Picture */}
           <div className="mb-8 flex justify-center">
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-gray-200 shadow-lg">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl ring-4 ring-gray-100 hover:scale-105 transition-transform duration-300">
               <Image
                 src="/profile.JPG"
                 alt={personalInfo.name}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 priority
               />
             </div>

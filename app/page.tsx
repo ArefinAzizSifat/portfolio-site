@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "@/data/projects";
 import { personalInfo } from "@/data/personal";
 import { experiences } from "@/data/experience";
@@ -12,6 +13,18 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Profile Picture */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-gray-200 shadow-lg">
+              <Image
+                src="/profile.JPG"
+                alt={personalInfo.name}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
           <p className="text-sm sm:text-base font-medium text-gray-600 mb-4 tracking-wide uppercase">
             {personalInfo.title}
           </p>
@@ -152,12 +165,24 @@ export default function HomePage() {
             {featuredProjects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 group"
+                className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 group overflow-hidden"
               >
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-700 mb-4">
-                    {project.category}
-                  </span>
+                {/* Project Image */}
+                {project.image && (
+                  <div className="relative w-full h-48 bg-gray-100">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+                <div className="p-6">
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-700 mb-4">
+                      {project.category}
+                    </span>
                   <h3 className="text-xl font-bold mb-3 group-hover:text-gray-700 transition-colors">
                     {project.title}
                   </h3>
@@ -180,12 +205,13 @@ export default function HomePage() {
                     </span>
                   )}
                 </div>
-                <Link
-                  href={`/projects/${project.id}`}
-                  className="text-sm font-medium text-gray-900 hover:underline"
-                >
-                  Learn more →
-                </Link>
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className="text-sm font-medium text-gray-900 hover:underline"
+                  >
+                    Learn more →
+                  </Link>
+                </div>
               </div>
             ))}
           </div>

@@ -20,6 +20,7 @@ export const projects: Project[] = [
     longDescription: `Built SeaWorld, a custom 5×5 reinforcement-learning environment (gym-style) with hazards and goal-driven rewards. Trained Q-learning and DQN agents to convergence, achieving stable policy performance. The project demonstrates deep understanding of RL fundamentals and practical implementation skills.`,
     tech: ["Python", "OpenAI Gym", "Q-Learning", "DQN", "NumPy", "Matplotlib"],
     category: "Machine Learning",
+    image: "/projects/seaworld-rl.jpg",
     featured: true,
     metrics: [
       "Average episode reward: ~30 (stable policy)",
@@ -34,6 +35,7 @@ export const projects: Project[] = [
     longDescription: `Developed a comprehensive CNN pipeline for metal casting defect detection including preprocessing, training, and evaluation. Achieved strong performance metrics and created reproducible workflows for deployment. The system demonstrates practical application of deep learning in industrial quality control.`,
     tech: ["Python", "TensorFlow", "Keras", "CNN", "Data Preprocessing", "Computer Vision"],
     category: "Computer Vision",
+    image: "/projects/metal-casting.jpg",
     featured: true,
     metrics: [
       "92.91% validation accuracy",
@@ -49,6 +51,7 @@ export const projects: Project[] = [
     longDescription: `As a Student Research Assistant at AImotion Bavaria, upgraded and maintained the Python codebase for DirectionNet, a transformer-based UAV localization system. Improved training stability, reduced loss significantly, and enhanced model performance across multiple datasets.`,
     tech: ["Python", "PyTorch", "Transformers", "Computer Vision", "Linux", "macOS"],
     category: "Research",
+    image: "/projects/directionnet-uav.jpg",
     featured: true,
     metrics: [
       "Reduced training loss by >98%",

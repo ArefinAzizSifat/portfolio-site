@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          {/* Quick Links */}}
+          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-slate-100">Quick Links</h3>
             <ul className="space-y-2">

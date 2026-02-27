@@ -19,7 +19,7 @@ export default function HomePage() {
           <div className="mb-8 flex justify-center">
             <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl ring-4 ring-slate-100 dark:ring-slate-800 hover:scale-105 transition-transform duration-300">
               <Image
-                src="/profile.JPG"
+                src="/profile.jpg"
                 alt={personalInfo.name}
                 fill
                 className="object-cover object-top"

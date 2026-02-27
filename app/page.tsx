@@ -271,9 +271,7 @@ export default function HomePage() {
                           <img
                             src={`https://cdn.simpleicons.org/${slug}`}
                             alt={skill}
-                            width={14}
-                            height={14}
-                            className="dark:invert"
+                            className="w-3.5 h-3.5 flex-shrink-0 object-contain dark:invert"
                           />
                         )}
                         {skill}

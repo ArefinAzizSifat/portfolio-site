@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-/* Mouse cursor effect */
+/* Custom cursor effects */
 body {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="4" fill="%23000"/><circle cx="16" cy="16" r="8" fill="none" stroke="%23000" stroke-width="1" opacity="0.5"/></svg>') 15 15, auto;
 }
 
-[data-theme="dark"] body {
+.dark body {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="4" fill="%23fff"/><circle cx="16" cy="16" r="8" fill="none" stroke="%23fff" stroke-width="1" opacity="0.5"/></svg>') 15 15, auto;
 }
 
@@ -13,7 +13,7 @@ a, button {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23000"/></svg>') 15 15, pointer;
 }
 
-[data-theme="dark"] a, [data-theme="dark"] button {
+.dark a, .dark button {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="%23fff"/></svg>') 15 15, pointer;
 }
 
@@ -23,115 +23,42 @@ a, button {
   }
 
   body {
-    @apply text-gray-900 transition-colors duration-300;
+    @apply bg-white text-slate-900 transition-colors duration-300;
   }
   
-  /* Default Theme - Gradient */
+  /* Default theme - gradient background */
   [data-theme="default"] body {
-    @apply bg-gradient-to-br from-gray-50 via-white to-blue-50;
+    @apply bg-gradient-to-br from-slate-50 via-white to-blue-50;
     background-attachment: fixed;
   }
   
-  /* Light Theme - White with dots */
+  /* Light theme - clean white */
   [data-theme="light"] body {
-    @apply bg-white text-gray-900;
+    @apply bg-white;
   }
   
-  /* Dark Theme - Charcoal (minimalistic) */
-  [data-theme="dark"] body {
-    @apply bg-gray-950 text-gray-100;
-  }
-  
-  /* Dark Mode Text Color Fixes */
-  [data-theme="dark"] h1,
-  [data-theme="dark"] h2,
-  [data-theme="dark"] h3,
-  [data-theme="dark"] h4,
-  [data-theme="dark"] h5,
-  [data-theme="dark"] h6 {
-    @apply text-white;
-  }
-  
-  [data-theme="dark"] .text-gray-900 {
-    @apply text-white;
-  }
-  
-  [data-theme="dark"] .text-gray-700 {
-    @apply text-gray-200;
-  }
-  
-  [data-theme="dark"] .text-gray-600 {
-    @apply text-gray-300;
-  }
-  
-  [data-theme="dark"] .text-gray-500 {
-    @apply text-gray-400;
-  }
-  
-  [data-theme="dark"] .bg-white {
-    @apply bg-gray-900;
-  }
-  
-  [data-theme="dark"] .bg-gray-50 {
-    @apply bg-gray-900/70;
-  }
-  
-  [data-theme="dark"] .bg-gray-100 {
-    @apply bg-gray-800;
-  }
-  
-  [data-theme="dark"] .border-gray-200,
-  [data-theme="dark"] .border-gray-100,
-  [data-theme="dark"] .border-gray-300 {
-    @apply border-gray-800;
-  }
-  
-  [data-theme="dark"] .shadow-sm {
-    @apply shadow-lg shadow-black/50;
-  }
-  
-  [data-theme="dark"] input,
-  [data-theme="dark"] textarea {
-    @apply bg-gray-900 text-white border-gray-800;
+  /* Dark theme */
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
   }
 }
 
-/* Global Dark Mode Section Backgrounds */
-[data-theme="dark"] section {
-  @apply bg-gray-950 !important;
-  background-image: none !important;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Background grid + glow effects */
+@layer components {
+  .bg-grid-pattern {
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.1), transparent 50%),
+      radial-gradient(circle at 100% 50%, rgba(139, 92, 246, 0.08), transparent 50%),
+      repeating-linear-gradient(0deg, rgba(148, 163, 184, 0.05) 0px, transparent 1px, transparent 40px),
+      repeating-linear-gradient(90deg, rgba(148, 163, 184, 0.05) 0px, transparent 1px, transparent 40px);
   }
   
-  /* Dotted Background Patterns */
-  .dots-pattern {
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-  
-  [data-theme="dark"] .dots-pattern {
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  }
-  
-  [data-theme="light"] .dots-pattern {
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
-  }
-  
-  .dots-pattern-lg {
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 2px, transparent 2px);
-    background-size: 40px 40px;
-  }
-  
-  [data-theme="dark"] .dots-pattern-lg {
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 2px, transparent 2px);
-  }
-  
-  [data-theme="light"] .dots-pattern-lg {
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.06) 2px, transparent 2px);
+  .dark .bg-grid-pattern {
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15), transparent 50%),
+      radial-gradient(circle at 100% 50%, rgba(139, 92, 246, 0.12), transparent 50%),
+      repeating-linear-gradient(0deg, rgba(148, 163, 184, 0.03) 0px, transparent 1px, transparent 40px),
+      repeating-linear-gradient(90deg, rgba(148, 163, 184, 0.03) 0px, transparent 1px, transparent 40px);
   }
   
   .gradient-mesh {
@@ -142,12 +69,18 @@ a, button {
       radial-gradient(at 0% 100%, rgba(34, 211, 238, 0.1) 0px, transparent 50%);
   }
   
-  [data-theme="dark"] .gradient-mesh {
+  .dark .gradient-mesh {
     background: 
-      radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.2) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.2) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.2) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, rgba(34, 211, 238, 0.2) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(34, 211, 238, 0.15) 0px, transparent 50%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
   
   .animate-gradient {

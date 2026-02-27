@@ -5,13 +5,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
+    <footer className="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* About Column */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Arefin Aziz Sifat</h3>
-            <p className="text-gray-600 text-sm">
+            <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-slate-100">Arefin Aziz Sifat</h3>
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
               AI Engineering student focused on autonomous systems, machine
               learning pipelines, and reliable infrastructure operations.
             </p>
@@ -19,12 +19,12 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-slate-100">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/#about"
-                  className="text-gray-600 hover:text-gray-900 text-sm transition-colors"
+                  className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm transition-colors"
                 >
                   About
                 </Link>
@@ -32,7 +32,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/#projects"
-                  className="text-gray-600 hover:text-gray-900 text-sm transition-colors"
+                  className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm transition-colors"
                 >
                   Projects
                 </Link>
@@ -40,7 +40,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/#experience"
-                  className="text-gray-600 hover:text-gray-900 text-sm transition-colors"
+                  className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm transition-colors"
                 >
                   Experience
                 </Link>
@@ -48,7 +48,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/blog"
-                  className="text-gray-600 hover:text-gray-900 text-sm transition-colors"
+                  className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 text-sm transition-colors"
                 >
                   Blog
                 </Link>
@@ -58,13 +58,13 @@ const Footer = () => {
 
           {/* Connect */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Connect</h3>
+            <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-slate-100">Connect</h3>
             <div className="flex space-x-4">
               <a
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -79,7 +79,7 @@ const Footer = () => {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
                 aria-label="GitHub"
               >
                 <svg
@@ -92,7 +92,7 @@ const Footer = () => {
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
                 aria-label="Email"
               >
                 <svg
@@ -113,7 +113,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-8 text-center text-sm text-gray-600">
+        <div className="border-t border-slate-200 dark:border-slate-800 pt-8 text-center text-sm text-slate-600 dark:text-slate-400">
           <p>
             © {currentYear} Arefin Aziz Sifat. Built with Next.js & Tailwind
             CSS.

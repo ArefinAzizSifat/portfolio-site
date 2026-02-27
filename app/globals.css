@@ -96,6 +96,12 @@ a, button {
   }
 }
 
+/* Global Dark Mode Section Backgrounds */
+[data-theme="dark"] section {
+  @apply bg-gray-950 !important;
+  background-image: none !important;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

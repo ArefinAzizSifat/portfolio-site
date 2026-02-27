@@ -7,17 +7,8 @@ const Footer = () => {
   return (
     <footer className="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* About Column */}
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-slate-100">Arefin Aziz Sifat</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm">
-              AI Engineering student focused on autonomous systems, machine
-              learning pipelines, and reliable infrastructure operations.
-            </p>
-          </div>
-
-          {/* Quick Links */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          {/* Quick Links */}}
           <div>
             <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-slate-100">Quick Links</h3>
             <ul className="space-y-2">
@@ -114,10 +105,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-slate-200 dark:border-slate-800 pt-8 text-center text-sm text-slate-600 dark:text-slate-400">
-          <p>
-            © {currentYear} Arefin Aziz Sifat. Built with Next.js & Tailwind
-            CSS.
-          </p>
+          <p>© {currentYear} Arefin Aziz Sifat.</p>
         </div>
       </div>
     </footer>

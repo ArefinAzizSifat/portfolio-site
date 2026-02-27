@@ -239,20 +239,47 @@ export default function HomePage() {
             {aiSkills.map((skillCategory, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800"
+                className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 hover:shadow-md transition-shadow"
               >
-                <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-slate-100">
-                  {skillCategory.category}
-                </h3>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl">{skillCategory.icon}</span>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                    {skillCategory.category}
+                  </h3>
+                </div>
                 <div className="flex flex-wrap gap-2">
-                  {skillCategory.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skillIndex}
-                      className="px-3 py-1 bg-slate-50 dark:bg-slate-800 rounded-full text-sm text-slate-700 dark:text-slate-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                  {skillCategory.skills.map((skill, skillIndex) => {
+                    const iconSlug: Record<string, string> = {
+                      "Python": "python", "TensorFlow": "tensorflow", "PyTorch": "pytorch",
+                      "Docker": "docker", "AWS": "amazonaws", "Azure (Basic)": "microsoftazure",
+                      "Git": "git", "SQL": "mysql", "Grafana": "grafana",
+                      "Prometheus": "prometheus", "Linux (CLI)": "linux", "Windows": "windows",
+                      "Nginx": "nginx", "Apache": "apache", "Jira": "jira",
+                      "C++": "cplusplus", "C": "c", "Bash Scripting": "gnubash",
+                      "OpenStack": "openstack", "Proxmox": "proxmox", "Samba": "samba",
+                      "Microsoft 365": "microsoft", "Excel": "microsoftexcel",
+                      "PowerPoint": "microsoftpowerpoint", "Outlook": "microsoftoutlook",
+                      "Teams": "microsoftteams", "macOS": "apple",
+                    };
+                    const slug = iconSlug[skill];
+                    return (
+                      <span
+                        key={skillIndex}
+                        className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 dark:bg-slate-800 rounded-full text-sm text-slate-700 dark:text-slate-300 border border-slate-100 dark:border-slate-700"
+                      >
+                        {slug && (
+                          <img
+                            src={`https://cdn.simpleicons.org/${slug}`}
+                            alt={skill}
+                            width={14}
+                            height={14}
+                            className="dark:invert"
+                          />
+                        )}
+                        {skill}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             ))}

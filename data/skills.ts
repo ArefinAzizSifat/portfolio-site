@@ -1,11 +1,13 @@
 export interface SkillCategory {
   category: string;
+  icon: string;
   skills: string[];
 }
 
 export const aiSkills: SkillCategory[] = [
   {
     category: "Machine Learning",
+    icon: "🤖",
     skills: [
       "Machine Learning",
       "Deep Learning",
@@ -18,6 +20,7 @@ export const aiSkills: SkillCategory[] = [
   },
   {
     category: "Data Science & Analytics",
+    icon: "📊",
     skills: [
       "Data-driven Analysis",
       "Statistical Evaluation",
@@ -27,6 +30,7 @@ export const aiSkills: SkillCategory[] = [
   },
   {
     category: "Software Engineering",
+    icon: "💻",
     skills: [
       "Software Development",
       "Clean Code",
@@ -38,6 +42,7 @@ export const aiSkills: SkillCategory[] = [
   },
   {
     category: "Data Engineering",
+    icon: "🗄️",
     skills: [
       "SQL",
       "NoSQL",
@@ -47,6 +52,7 @@ export const aiSkills: SkillCategory[] = [
   },
   {
     category: "Programming Languages",
+    icon: "🐍",
     skills: [
       "Python",
       "C",
@@ -57,6 +63,7 @@ export const aiSkills: SkillCategory[] = [
   },
   {
     category: "Cloud & DevOps",
+    icon: "☁️",
     skills: [
       "AWS",
       "Azure (Basic)",
@@ -71,6 +78,7 @@ export const aiSkills: SkillCategory[] = [
 export const itSkills: SkillCategory[] = [
   {
     category: "Operating Systems",
+    icon: "🖥️",
     skills: [
       "Linux (CLI)",
       "Windows",
@@ -79,6 +87,7 @@ export const itSkills: SkillCategory[] = [
   },
   {
     category: "Networking",
+    icon: "🌐",
     skills: [
       "SSH",
       "DNS Troubleshooting",
@@ -88,6 +97,7 @@ export const itSkills: SkillCategory[] = [
   },
   {
     category: "Server Services",
+    icon: "🔧",
     skills: [
       "Apache",
       "Nginx",
@@ -100,6 +110,7 @@ export const itSkills: SkillCategory[] = [
   },
   {
     category: "Monitoring Tools",
+    icon: "📈",
     skills: [
       "Prometheus",
       "Grafana",
@@ -111,6 +122,7 @@ export const itSkills: SkillCategory[] = [
   },
   {
     category: "Cloud & Virtualization",
+    icon: "⚡",
     skills: [
       "AWS",
       "Azure (Basic)",
@@ -121,6 +133,7 @@ export const itSkills: SkillCategory[] = [
   },
   {
     category: "Productivity Suite",
+    icon: "📋",
     skills: [
       "Microsoft 365",
       "Word",
